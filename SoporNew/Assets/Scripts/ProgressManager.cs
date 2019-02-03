@@ -102,19 +102,22 @@ namespace Assets.Scripts
 
             MainSaveModel.Instanse.GroundItems = gameManager.PlacementItemsController.GetItemsToSerialize();
 
-            var carModel = new CarSaveModel();
-            var carTransfrom = gameManager.CarInteractive.transform;
-            carModel.PosX = carTransfrom.position.x;
-            carModel.PosY = carTransfrom.position.y;
-            carModel.PosZ = carTransfrom.position.z;
+            if (gameManager.CarInteractive != null)
+            {
+                var carModel = new CarSaveModel();
+                var carTransfrom = gameManager.CarInteractive.transform;
+                carModel.PosX = carTransfrom.position.x;
+                carModel.PosY = carTransfrom.position.y;
+                carModel.PosZ = carTransfrom.position.z;
 
-            var carRotation = carTransfrom.eulerAngles;
-            carModel.RotX = carRotation.x;
-            carModel.RotY = carRotation.y;
-            carModel.RotZ = carRotation.z;
+                var carRotation = carTransfrom.eulerAngles;
+                carModel.RotX = carRotation.x;
+                carModel.RotY = carRotation.y;
+                carModel.RotZ = carRotation.z;
 
-            carModel.Petrol = gameManager.CarInteractive.Petrol;
-            MainSaveModel.Instanse.CarModel = carModel;
+                carModel.Petrol = gameManager.CarInteractive.Petrol;
+                MainSaveModel.Instanse.CarModel = carModel;
+            }
 
             MainSaveModel.Instanse.CurrentTerratinId = gameManager.CurrentTerain == gameManager.Terrain2 ? 1 : 0;
 
@@ -232,14 +235,22 @@ namespace Assets.Scripts
 
             if (MainSaveModel.Instanse.CarModel != null)
             {
-                var carTransform = gameManager.CarInteractive.transform;
-                carTransform.position = new Vector3(MainSaveModel.Instanse.CarModel.PosX, MainSaveModel.Instanse.CarModel.PosY, MainSaveModel.Instanse.CarModel.PosZ);
-                carTransform.eulerAngles = new Vector3(MainSaveModel.Instanse.CarModel.RotX, MainSaveModel.Instanse.CarModel.RotY, MainSaveModel.Instanse.CarModel.RotZ);
-                gameManager.CarInteractive.Petrol = MainSaveModel.Instanse.CarModel.Petrol;
+                if (gameManager.CarInteractive != null)
+                {
+                    var carTransform = gameManager.CarInteractive.transform;
+                    carTransform.position = new Vector3(MainSaveModel.Instanse.CarModel.PosX,
+                        MainSaveModel.Instanse.CarModel.PosY, MainSaveModel.Instanse.CarModel.PosZ);
+                    carTransform.eulerAngles = new Vector3(MainSaveModel.Instanse.CarModel.RotX,
+                        MainSaveModel.Instanse.CarModel.RotY, MainSaveModel.Instanse.CarModel.RotZ);
+                    gameManager.CarInteractive.Petrol = MainSaveModel.Instanse.CarModel.Petrol;
+                }
             }
             else
             {
-                gameManager.CarInteractive.Petrol = 0.5f;
+                if (gameManager.CarInteractive != null)
+                {
+                    gameManager.CarInteractive.Petrol = 0.5f;
+                }
             }
 
             if (MainSaveModel.Instanse.InCar)
@@ -282,13 +293,14 @@ namespace Assets.Scripts
 
             TOD_Sky.Instance.Cycle.Hour = 7.0f;
 
-            gameManager.CarInteractive.Petrol = 0.5f;
+            if(gameManager.CarInteractive != null)
+                gameManager.CarInteractive.Petrol = 0.5f;
 
             gameManager.PlacementItemsController.AddStartLoot();
 
             gameManager.CurrentTerain = gameManager.Terrain1;
 
-            gameManager.Intro.Run(gameManager);
+            //gameManager.Intro.Run(gameManager);
             //AddTestItems(gameManager);
         }
 

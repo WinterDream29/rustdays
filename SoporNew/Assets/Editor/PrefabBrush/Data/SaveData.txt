@@ -1,10 +1,10 @@
-Layer Selection: Default
+Layer Selection: Terrain
 Brush Max Size: 20
-Brush Size: 1.88
+Brush Size: 2.76
 Fill Mode: True
-Fill Rate: 0.2
+Fill Rate: 0.4282
 
-Game Object: Assets/Nature Pack Mobile/Prefab LOD/Grass1_LOD.prefab
+Game Object: Assets/Resources/Prefabs/Environment/Trees/Tree1.prefab
 Layer: Default
 Toggle: True
 Slider: 1
@@ -22,7 +22,7 @@ Fixed Rotation Y: 0
 Fixed Rotation Z: 0
 Depth: 0
 
-Game Object: Assets/Nature Pack Mobile/Prefab LOD/Grass2_LOD.prefab
+Game Object: Assets/Resources/Prefabs/Environment/Trees/Tree4.prefab
 Layer: Default
 Toggle: True
 Slider: 1
@@ -40,10 +40,10 @@ Fixed Rotation Y: 0
 Fixed Rotation Z: 0
 Depth: 0
 
-Game Object: Assets/Nature Pack Mobile/Prefab LOD/Grass3_LOD.prefab
+Game Object: Assets/Resources/Prefabs/Environment/Trees/Tree7.prefab
 Layer: Default
 Toggle: True
-Slider: 0.05555556
+Slider: 1
 Lock Orientation Toggle: True
 Random Rotation Toggle: False
 Random Rotation X: False
@@ -58,10 +58,10 @@ Fixed Rotation Y: 0
 Fixed Rotation Z: 0
 Depth: 0
 
-Game Object: Assets/Nature Pack Mobile/Prefab LOD/Grass4_LOD.prefab
+Game Object: Assets/Resources/Prefabs/Environment/Trees/Tree8.prefab
 Layer: Default
 Toggle: True
-Slider: 0.1574074
+Slider: 1
 Lock Orientation Toggle: True
 Random Rotation Toggle: False
 Random Rotation X: False
@@ -76,10 +76,10 @@ Fixed Rotation Y: 0
 Fixed Rotation Z: 0
 Depth: 0
 
-Game Object: Assets/Nature Pack Mobile/Prefab LOD/Grass5_LOD.prefab
+Game Object: Assets/Resources/Prefabs/Environment/Trees/Tree10.prefab
 Layer: Default
 Toggle: True
-Slider: 0.1574074
+Slider: 1
 Lock Orientation Toggle: True
 Random Rotation Toggle: False
 Random Rotation X: False
@@ -94,10 +94,10 @@ Fixed Rotation Y: 0
 Fixed Rotation Z: 0
 Depth: 0
 
-Game Object: Assets/Nature Pack Mobile/Prefab LOD/Grass6_LOD.prefab
+Game Object: Assets/Resources/Prefabs/Environment/Trees/Tree14A.prefab
 Layer: Default
 Toggle: True
-Slider: 0.1018518
+Slider: 1
 Lock Orientation Toggle: True
 Random Rotation Toggle: False
 Random Rotation X: False
@@ -112,10 +112,10 @@ Fixed Rotation Y: 0
 Fixed Rotation Z: 0
 Depth: 0
 
-Game Object: Assets/Nature Pack Mobile/Prefab LOD/Grass7_LOD.prefab
+Game Object: Assets/Resources/Prefabs/Environment/Trees/Tree14B.prefab
 Layer: Default
 Toggle: True
-Slider: 0
+Slider: 0.7314815
 Lock Orientation Toggle: True
 Random Rotation Toggle: False
 Random Rotation X: False
@@ -130,10 +130,10 @@ Fixed Rotation Y: 0
 Fixed Rotation Z: 0
 Depth: 0
 
-Game Object: Assets/Nature Pack Mobile/Prefab LOD/Grass8_LOD.prefab
+Game Object: Assets/Resources/Prefabs/Environment/Trees/Tree15.prefab
 Layer: Default
 Toggle: True
-Slider: 0
+Slider: 0.3148148
 Lock Orientation Toggle: True
 Random Rotation Toggle: False
 Random Rotation X: False
@@ -148,10 +148,10 @@ Fixed Rotation Y: 0
 Fixed Rotation Z: 0
 Depth: 0
 
-Game Object: Assets/Nature Pack Mobile/Prefab LOD/Grass9_LOD.prefab
+Game Object: Assets/Resources/Prefabs/Environment/Trees/DeadTree1.prefab
 Layer: Default
 Toggle: True
-Slider: 0
+Slider: 0.2777778
 Lock Orientation Toggle: True
 Random Rotation Toggle: False
 Random Rotation X: False
@@ -166,10 +166,10 @@ Fixed Rotation Y: 0
 Fixed Rotation Z: 0
 Depth: 0
 
-Game Object: Assets/Nature Pack Mobile/Prefab LOD/Grass10_LOD.prefab
+Game Object: Assets/Resources/Prefabs/Environment/Trees/DeadTrees.prefab
 Layer: Default
 Toggle: True
-Slider: 0
+Slider: 0.1759259
 Lock Orientation Toggle: True
 Random Rotation Toggle: False
 Random Rotation X: False

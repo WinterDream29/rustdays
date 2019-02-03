@@ -11,7 +11,8 @@ public class SpawnZonesAgregator : MonoBehaviour
     public void Init(GameManager gameManager)
     {
         _gameManager = gameManager;
-        StartCoroutine(InitZones());
+        if(gameObject.activeSelf)
+            StartCoroutine(InitZones());
     }
 
     private IEnumerator InitZones()

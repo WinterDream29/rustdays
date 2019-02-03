@@ -18,7 +18,8 @@ namespace Assets.Scripts.Controllers.Fauna
         {
             _gameManager = gameManager;
 
-            StartCoroutine(InitZones());
+            if(gameObject.activeSelf)
+                StartCoroutine(InitZones());
 
             SetDistance(QualityManager.CurrentQuality);
             QualityManager.OnChangeQuality += SetDistance;

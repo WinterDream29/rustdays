@@ -26,7 +26,8 @@ namespace Assets.Scripts
             var rays = gameManager.Player.FpsCamera.GetComponent<TOD_Rays>();
             var scattering = gameManager.Player.FpsCamera.GetComponent<TOD_Scattering>();
 
-            gameManager.World.Grass.SetActive(true);
+            if (gameManager.World.Grass != null)
+                gameManager.World.Grass.SetActive(true);
 
             switch (CurrentQuality)
             {
@@ -43,7 +44,8 @@ namespace Assets.Scripts
                     //gameManager.Terrain1.detailObjectDensity = 0.0f;
                     gameManager.Terrain2.basemapDistance = 20;
                     //gameManager.Terrain2.detailObjectDensity = 0.0f;
-                    gameManager.World.Grass.SetActive(false);
+                    if(gameManager.World.Grass != null)
+                        gameManager.World.Grass.SetActive(false);
                     break;
                 case QualityType.Medium:
                     gameManager.World.Sky.CloudQuality = TOD_CloudQualityType.Medium;
