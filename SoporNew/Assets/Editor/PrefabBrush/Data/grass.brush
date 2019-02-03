@@ -1,0 +1,185 @@
+Layer Selection: Default
+Brush Max Size: 20
+Brush Size: 1.88
+Fill Mode: True
+Fill Rate: 0.2
+
+Game Object: Assets/Nature Pack Mobile/Prefab LOD/Grass1_LOD.prefab
+Layer: Default
+Toggle: True
+Slider: 1
+Lock Orientation Toggle: True
+Random Rotation Toggle: False
+Random Rotation X: False
+Random Rotation Y: False
+Random Rotation Z: False
+Random Scale Toggle: False
+Random Scale Min: 0.1
+Random Scale Max: 1
+Fixed Rotation Toggle: False
+Fixed Rotation X: 0
+Fixed Rotation Y: 0
+Fixed Rotation Z: 0
+Depth: 0
+
+Game Object: Assets/Nature Pack Mobile/Prefab LOD/Grass2_LOD.prefab
+Layer: Default
+Toggle: True
+Slider: 1
+Lock Orientation Toggle: True
+Random Rotation Toggle: False
+Random Rotation X: False
+Random Rotation Y: False
+Random Rotation Z: False
+Random Scale Toggle: False
+Random Scale Min: 0.1
+Random Scale Max: 1
+Fixed Rotation Toggle: False
+Fixed Rotation X: 0
+Fixed Rotation Y: 0
+Fixed Rotation Z: 0
+Depth: 0
+
+Game Object: Assets/Nature Pack Mobile/Prefab LOD/Grass3_LOD.prefab
+Layer: Default
+Toggle: True
+Slider: 0.05555556
+Lock Orientation Toggle: True
+Random Rotation Toggle: False
+Random Rotation X: False
+Random Rotation Y: False
+Random Rotation Z: False
+Random Scale Toggle: False
+Random Scale Min: 0.1
+Random Scale Max: 1
+Fixed Rotation Toggle: False
+Fixed Rotation X: 0
+Fixed Rotation Y: 0
+Fixed Rotation Z: 0
+Depth: 0
+
+Game Object: Assets/Nature Pack Mobile/Prefab LOD/Grass4_LOD.prefab
+Layer: Default
+Toggle: True
+Slider: 0.1574074
+Lock Orientation Toggle: True
+Random Rotation Toggle: False
+Random Rotation X: False
+Random Rotation Y: False
+Random Rotation Z: False
+Random Scale Toggle: False
+Random Scale Min: 0.1
+Random Scale Max: 1
+Fixed Rotation Toggle: False
+Fixed Rotation X: 0
+Fixed Rotation Y: 0
+Fixed Rotation Z: 0
+Depth: 0
+
+Game Object: Assets/Nature Pack Mobile/Prefab LOD/Grass5_LOD.prefab
+Layer: Default
+Toggle: True
+Slider: 0.1574074
+Lock Orientation Toggle: True
+Random Rotation Toggle: False
+Random Rotation X: False
+Random Rotation Y: False
+Random Rotation Z: False
+Random Scale Toggle: False
+Random Scale Min: 0.1
+Random Scale Max: 1
+Fixed Rotation Toggle: False
+Fixed Rotation X: 0
+Fixed Rotation Y: 0
+Fixed Rotation Z: 0
+Depth: 0
+
+Game Object: Assets/Nature Pack Mobile/Prefab LOD/Grass6_LOD.prefab
+Layer: Default
+Toggle: True
+Slider: 0.1018518
+Lock Orientation Toggle: True
+Random Rotation Toggle: False
+Random Rotation X: False
+Random Rotation Y: False
+Random Rotation Z: False
+Random Scale Toggle: False
+Random Scale Min: 0.1
+Random Scale Max: 1
+Fixed Rotation Toggle: False
+Fixed Rotation X: 0
+Fixed Rotation Y: 0
+Fixed Rotation Z: 0
+Depth: 0
+
+Game Object: Assets/Nature Pack Mobile/Prefab LOD/Grass7_LOD.prefab
+Layer: Default
+Toggle: True
+Slider: 0
+Lock Orientation Toggle: True
+Random Rotation Toggle: False
+Random Rotation X: False
+Random Rotation Y: False
+Random Rotation Z: False
+Random Scale Toggle: False
+Random Scale Min: 0.1
+Random Scale Max: 1
+Fixed Rotation Toggle: False
+Fixed Rotation X: 0
+Fixed Rotation Y: 0
+Fixed Rotation Z: 0
+Depth: 0
+
+Game Object: Assets/Nature Pack Mobile/Prefab LOD/Grass8_LOD.prefab
+Layer: Default
+Toggle: True
+Slider: 0
+Lock Orientation Toggle: True
+Random Rotation Toggle: False
+Random Rotation X: False
+Random Rotation Y: False
+Random Rotation Z: False
+Random Scale Toggle: False
+Random Scale Min: 0.1
+Random Scale Max: 1
+Fixed Rotation Toggle: False
+Fixed Rotation X: 0
+Fixed Rotation Y: 0
+Fixed Rotation Z: 0
+Depth: 0
+
+Game Object: Assets/Nature Pack Mobile/Prefab LOD/Grass9_LOD.prefab
+Layer: Default
+Toggle: True
+Slider: 0
+Lock Orientation Toggle: True
+Random Rotation Toggle: False
+Random Rotation X: False
+Random Rotation Y: False
+Random Rotation Z: False
+Random Scale Toggle: False
+Random Scale Min: 0.1
+Random Scale Max: 1
+Fixed Rotation Toggle: False
+Fixed Rotation X: 0
+Fixed Rotation Y: 0
+Fixed Rotation Z: 0
+Depth: 0
+
+Game Object: Assets/Nature Pack Mobile/Prefab LOD/Grass10_LOD.prefab
+Layer: Default
+Toggle: True
+Slider: 0
+Lock Orientation Toggle: True
+Random Rotation Toggle: False
+Random Rotation X: False
+Random Rotation Y: False
+Random Rotation Z: False
+Random Scale Toggle: False
+Random Scale Min: 0.1
+Random Scale Max: 1
+Fixed Rotation Toggle: False
+Fixed Rotation X: 0
+Fixed Rotation Y: 0
+Fixed Rotation Z: 0
+Depth: 0

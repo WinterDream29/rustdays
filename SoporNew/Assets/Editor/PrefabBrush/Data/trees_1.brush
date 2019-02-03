@@ -1,0 +1,59 @@
+Layer Selection: Ground
+Brush Max Size: 10
+Brush Size: 2
+Fill Mode: False
+Fill Rate: 0.25
+
+Game Object: Assets/Resources/Prefabs/Environment/Trees/Tree1.prefab
+Layer: Obstacle
+Toggle: True
+Slider: 1
+Lock Orientation Toggle: True
+Random Rotation Toggle: False
+Random Rotation X: False
+Random Rotation Y: False
+Random Rotation Z: False
+Random Scale Toggle: False
+Random Scale Min: 0.1
+Random Scale Max: 1
+Fixed Rotation Toggle: False
+Fixed Rotation X: 0
+Fixed Rotation Y: 0
+Fixed Rotation Z: 0
+Depth: 0
+
+Game Object: Assets/Resources/Prefabs/Environment/Trees/Tree8.prefab
+Layer: Obstacle
+Toggle: True
+Slider: 1
+Lock Orientation Toggle: True
+Random Rotation Toggle: False
+Random Rotation X: False
+Random Rotation Y: False
+Random Rotation Z: False
+Random Scale Toggle: False
+Random Scale Min: 0.1
+Random Scale Max: 1
+Fixed Rotation Toggle: False
+Fixed Rotation X: 0
+Fixed Rotation Y: 0
+Fixed Rotation Z: 0
+Depth: 0
+
+Game Object: Assets/Resources/Prefabs/Environment/Trees/Tree10.prefab
+Layer: Obstacle
+Toggle: True
+Slider: 1
+Lock Orientation Toggle: True
+Random Rotation Toggle: False
+Random Rotation X: False
+Random Rotation Y: False
+Random Rotation Z: False
+Random Scale Toggle: False
+Random Scale Min: 0.1
+Random Scale Max: 1
+Fixed Rotation Toggle: False
+Fixed Rotation X: 0
+Fixed Rotation Y: 0
+Fixed Rotation Z: 0
+Depth: 0

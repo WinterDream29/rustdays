@@ -1,0 +1,10 @@
+lastUpgrade=00950
+proj.pluginVersion=0.9.50
+proj.AppId=81246450962
+and.BundleId=com.airbit.outcast
+proj.classDir=Assets%2fScripts
+proj.ConstantsClassName=GPGSIds
+and.ResourceData=%3c%3fxml+version%3d%221.0%22+encoding%3d%22utf-8%22%3f%3e%0d%0a%3c%21--%0d%0aGoogle+Play+game+services+IDs.%0d%0aSave+this+file+as+res%2fvalues%2fgames-ids.xml+in+your+project.%0d%0a--%3e%0d%0a%3cresources%3e%0d%0a++%3cstring+name%3d%22app_id%22%3e81246450962%3c%2fstring%3e%0d%0a++%3cstring+name%3d%22package_name%22%3ecom.airbit.outcast%3c%2fstring%3e%0d%0a++%3cstring+name%3d%22achievement_rabbit_lover%22%3eCgkIkuqp1a4CEAIQAQ%3c%2fstring%3e%0d%0a++%3cstring+name%3d%22achievement_beginner_hunter%22%3eCgkIkuqp1a4CEAIQAg%3c%2fstring%3e%0d%0a++%3cstring+name%3d%22achievement_professional_hunter%22%3eCgkIkuqp1a4CEAIQAw%3c%2fstring%3e%0d%0a++%3cstring+name%3d%22achievement_earner_fire%22%3eCgkIkuqp1a4CEAIQBA%3c%2fstring%3e%0d%0a++%3cstring+name%3d%22achievement_richman%22%3eCgkIkuqp1a4CEAIQBQ%3c%2fstring%3e%0d%0a++%3cstring+name%3d%22leaderboard_amount_lived_days%22%3eCgkIkuqp1a4CEAIQBg%3c%2fstring%3e%0d%0a%3c%2fresources%3e
+and.ClientId=
+proj.requireGPlus=false
+android.SetupDone=true

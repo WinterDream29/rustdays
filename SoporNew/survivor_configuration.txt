@@ -1,0 +1,5 @@
+{
+	"GameVersion" : "1.0",
+	"ValidatePurchasePathAndroid" : "http://deadworld2-001-site1.itempurl.com/survivor_iap_validator_android.php",
+	"ValidatePurchasePathIOS" : "http://deadworld2-001-site1.itempurl.com/survivor_iap_validator_ios.php"
+}
