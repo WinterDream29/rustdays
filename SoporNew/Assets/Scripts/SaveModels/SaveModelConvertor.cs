@@ -17,6 +17,17 @@ namespace Assets.Scripts.SaveModels
             return list;
         }
 
+        public static List<float> MassObjToListFloat(object[] objItems)
+        {
+            var list = new List<float>();
+            if (objItems == null)
+                return list;
+            foreach (var item in objItems)
+                list.Add(Convert.ToSingle(item));
+
+            return list;
+        }
+
         public static Dictionary<string, float> DictObjToDictFloat(Dictionary<string, object> objItems)
         {
             var dict =new Dictionary<string, float>();

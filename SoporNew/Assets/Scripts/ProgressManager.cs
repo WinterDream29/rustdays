@@ -8,13 +8,13 @@ using Assets.Scripts.Models.Food;
 using Assets.Scripts.Models.ResourceObjects;
 using Assets.Scripts.Models.Weapons;
 using Assets.Scripts.SaveModels;
-using Assets.Scripts.WorkWithFiles;
 using UnityEngine;
 using Assets.Scripts.Models.Tools;
 using Assets.Scripts.Models.Constructions;
 using Assets.Scripts.Models.Ammo;
 using JsonWriter = Pathfinding.Serialization.JsonFx.JsonWriter;
 using Assets.Scripts.Models.ResourceObjects.CraftingResources;
+using Assets.Scripts.WorkWithFiles;
 using CodeStage.AntiCheat.ObscuredTypes;
 
 namespace Assets.Scripts
@@ -50,21 +50,8 @@ namespace Assets.Scripts
                 playerPosition.z
             };
             var playerRotation = gameManager.Player.transform.localEulerAngles;
-            MainSaveModel.Instanse.PlayerRotation = new List<float>
-            {
-                playerRotation.x,
-                playerRotation.y,
-                playerRotation.z
-            };
-
-            var respawnPlayerPointPos = gameManager.Player.RespawnPoint.position;
-            MainSaveModel.Instanse.RespawnPointPosition = new List<float>
-            {
-                respawnPlayerPointPos.x,
-                respawnPlayerPointPos.y,
-                respawnPlayerPointPos.z
-            };
-
+            MainSaveModel.Instanse.PlayerRotation = playerRotation.y;
+        
             #region Inventory
             MainSaveModel.Instanse.PlayerInventory = new InventorySaveModel();
 
@@ -140,6 +127,8 @@ namespace Assets.Scripts
             if (PlayerPrefs.GetInt(WorldConsts.LoadFromCloud, 0) == 1)
                 saveData = PlayerPrefs.GetString(WorldConsts.CurrentCloudSave);
 
+            Debug.LogError(saveData);
+
             if (string.IsNullOrEmpty(saveData))
             {
                 LoadDefaultProgress(gameManager);
@@ -147,7 +136,7 @@ namespace Assets.Scripts
             }
 
             var progress = AES.Decrypt(saveData, WorldConsts.CryptKey);
-            fastJSON.JSON.Instance.Parameters.EnableAnonymousTypes = true;
+            //fastJSON.JSON.Instance.Parameters.EnableAnonymousTypes = true;
             MainSaveModel.Instanse.ParseJsonStringToSaveItemModel(progress);
 
             CurrencyManager.AddCurrency(MainSaveModel.Instanse.CurrentCurrency);
@@ -170,19 +159,14 @@ namespace Assets.Scripts
 
             TOD_Sky.Instance.Cycle.Hour = MainSaveModel.Instanse.CurrentTime;
 
-            gameManager.Player.RespawnPoint.position = new Vector3(
-                MainSaveModel.Instanse.RespawnPointPosition[0],
-                MainSaveModel.Instanse.RespawnPointPosition[1],
-                MainSaveModel.Instanse.RespawnPointPosition[2]);
-
             gameManager.Player.transform.localPosition = new Vector3(
                 MainSaveModel.Instanse.PlayerPosition[0],
                 MainSaveModel.Instanse.PlayerPosition[1],
                 MainSaveModel.Instanse.PlayerPosition[2]);
             gameManager.Player.transform.eulerAngles = new Vector3(
-                MainSaveModel.Instanse.PlayerRotation[0],
-                MainSaveModel.Instanse.PlayerRotation[1],
-                MainSaveModel.Instanse.PlayerRotation[2]);
+                0,
+                MainSaveModel.Instanse.PlayerRotation,
+                0);
 
             #region Inventory
 

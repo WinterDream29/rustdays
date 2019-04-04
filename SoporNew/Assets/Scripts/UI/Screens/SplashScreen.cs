@@ -1,5 +1,4 @@
-﻿using Assets.Scripts.Ui;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -32,7 +31,7 @@ namespace Assets.Scripts.UI.Screens
         {
             yield return new WaitForSeconds(0.5f);
             SoundManager.PlaySFX(WorldConsts.AudioConsts.Back1);
-            yield return new WaitForSeconds(5.5f);
+            yield return new WaitForSeconds(1.5f);
             TweenAlpha.Begin(gameObject, 1.0f, 0.0f);
             yield return new WaitForSeconds(1.0f);
             gameObject.SetActive(false);

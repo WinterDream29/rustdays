@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using CodeStage.AntiCheat.ObscuredTypes;
+using Pathfinding.Serialization.JsonFx;
 
 namespace Assets.Scripts.SaveModels
 {
@@ -18,8 +18,7 @@ namespace Assets.Scripts.SaveModels
         public DateTime LogoutTs;
         public Dictionary<string, float> Stats;
         public List<float> PlayerPosition;
-        public List<float> PlayerRotation;
-        public List<float> RespawnPointPosition;
+        public float PlayerRotation;
         public InventorySaveModel PlayerInventory;
         public List<GroundItemSaveModel> GroundItems;
         public CarSaveModel CarModel;
@@ -34,13 +33,13 @@ namespace Assets.Scripts.SaveModels
 
         public void ParseJsonStringToSaveItemModel(string jsString)
         {
-            var mainNode = fastJSON.JSON.Instance.Parse(jsString) as Dictionary<string, object>;
+           // var mainNode = JsonWriter..JSON.Instance.Parse(jsString) as Dictionary<string, object>;
+            var mainNode = JsonReader.Deserialize(jsString) as Dictionary<string, object>;
 
             LogoutTs = DateTime.Parse(mainNode["LogoutTs"] as string);
             Stats = SaveModelConvertor.DictObjToDictFloat(mainNode["Stats"] as Dictionary<string, object>);
             PlayerPosition = GetVector3Object(mainNode, "PlayerPosition");
-            RespawnPointPosition = GetVector3Object(mainNode, "RespawnPointPosition");
-            PlayerRotation = GetVector3Object(mainNode, "PlayerRotation");
+            PlayerRotation = Convert.ToSingle(mainNode["PlayerRotation"]);
             PlayerInventory = SaveModelConvertor.ConvertToPlayerInventory(mainNode["PlayerInventory"]);
             GroundItems = SaveModelConvertor.ConvertToGroundItems((mainNode["GroundItems"] as List<object>));
             if (mainNode.ContainsKey("CarModel"))
@@ -61,7 +60,7 @@ namespace Assets.Scripts.SaveModels
         private List<float> GetVector3Object(Dictionary<string, object> node, string key)
         {
             if (node.ContainsKey(key) && node[key] != null)
-                return SaveModelConvertor.ListObjToListFloat(node[key] as List<object>);
+                return SaveModelConvertor.MassObjToListFloat(node[key] as object[]);
             return new List<float> { 0.0f, 0.0f, 0.0f };
         }
     }
