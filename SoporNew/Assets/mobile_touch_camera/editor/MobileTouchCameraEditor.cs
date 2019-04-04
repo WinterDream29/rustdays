@@ -21,7 +21,7 @@ namespace BitBenderGames {
 
       MobileTouchCamera mobileTouchCamera = (MobileTouchCamera)target;
 
-      if(Event.current.rawType == EventType.mouseUp) {
+      if(Event.current.rawType == EventType.MouseUp) {
         CheckSwapBoundary(mobileTouchCamera);
       }
 
