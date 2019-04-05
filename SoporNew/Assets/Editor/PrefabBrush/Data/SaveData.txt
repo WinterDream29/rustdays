@@ -1,14 +1,14 @@
-Layer Selection: Terrain
+Layer Selection: Default
 Brush Max Size: 20
 Brush Size: 2.76
 Fill Mode: True
-Fill Rate: 0.4282
+Fill Rate: 0.17
 
-Game Object: Assets/Resources/Prefabs/Environment/Trees/Tree1.prefab
+Game Object: Assets/SurrounDead/Models/Nature/tree_coniferous_A.prefab
 Layer: Default
 Toggle: True
 Slider: 1
-Lock Orientation Toggle: True
+Lock Orientation Toggle: False
 Random Rotation Toggle: False
 Random Rotation X: False
 Random Rotation Y: False
@@ -22,11 +22,11 @@ Fixed Rotation Y: 0
 Fixed Rotation Z: 0
 Depth: 0
 
-Game Object: Assets/Resources/Prefabs/Environment/Trees/Tree4.prefab
+Game Object: Assets/SurrounDead/Models/Nature/tree_coniferous_B.prefab
 Layer: Default
 Toggle: True
-Slider: 1
-Lock Orientation Toggle: True
+Slider: 0
+Lock Orientation Toggle: False
 Random Rotation Toggle: False
 Random Rotation X: False
 Random Rotation Y: False
@@ -40,11 +40,11 @@ Fixed Rotation Y: 0
 Fixed Rotation Z: 0
 Depth: 0
 
-Game Object: Assets/Resources/Prefabs/Environment/Trees/Tree7.prefab
+Game Object: Assets/SurrounDead/Models/Nature/tree_coniferous_C.prefab
 Layer: Default
 Toggle: True
-Slider: 1
-Lock Orientation Toggle: True
+Slider: 0
+Lock Orientation Toggle: False
 Random Rotation Toggle: False
 Random Rotation X: False
 Random Rotation Y: False
@@ -58,11 +58,11 @@ Fixed Rotation Y: 0
 Fixed Rotation Z: 0
 Depth: 0
 
-Game Object: Assets/Resources/Prefabs/Environment/Trees/Tree8.prefab
+Game Object: Assets/SurrounDead/Models/Nature/tree_coniferous_D.prefab
 Layer: Default
 Toggle: True
-Slider: 1
-Lock Orientation Toggle: True
+Slider: 0
+Lock Orientation Toggle: False
 Random Rotation Toggle: False
 Random Rotation X: False
 Random Rotation Y: False
@@ -76,11 +76,11 @@ Fixed Rotation Y: 0
 Fixed Rotation Z: 0
 Depth: 0
 
-Game Object: Assets/Resources/Prefabs/Environment/Trees/Tree10.prefab
+Game Object: Assets/SurrounDead/Models/Nature/tree_coniferous_E.prefab
 Layer: Default
 Toggle: True
-Slider: 1
-Lock Orientation Toggle: True
+Slider: 0
+Lock Orientation Toggle: False
 Random Rotation Toggle: False
 Random Rotation X: False
 Random Rotation Y: False
@@ -94,83 +94,11 @@ Fixed Rotation Y: 0
 Fixed Rotation Z: 0
 Depth: 0
 
-Game Object: Assets/Resources/Prefabs/Environment/Trees/Tree14A.prefab
+Game Object: Assets/SurrounDead/Models/Nature/tree_coniferous_F.prefab
 Layer: Default
 Toggle: True
-Slider: 1
-Lock Orientation Toggle: True
-Random Rotation Toggle: False
-Random Rotation X: False
-Random Rotation Y: False
-Random Rotation Z: False
-Random Scale Toggle: False
-Random Scale Min: 0.1
-Random Scale Max: 1
-Fixed Rotation Toggle: False
-Fixed Rotation X: 0
-Fixed Rotation Y: 0
-Fixed Rotation Z: 0
-Depth: 0
-
-Game Object: Assets/Resources/Prefabs/Environment/Trees/Tree14B.prefab
-Layer: Default
-Toggle: True
-Slider: 0.7314815
-Lock Orientation Toggle: True
-Random Rotation Toggle: False
-Random Rotation X: False
-Random Rotation Y: False
-Random Rotation Z: False
-Random Scale Toggle: False
-Random Scale Min: 0.1
-Random Scale Max: 1
-Fixed Rotation Toggle: False
-Fixed Rotation X: 0
-Fixed Rotation Y: 0
-Fixed Rotation Z: 0
-Depth: 0
-
-Game Object: Assets/Resources/Prefabs/Environment/Trees/Tree15.prefab
-Layer: Default
-Toggle: True
-Slider: 0.3148148
-Lock Orientation Toggle: True
-Random Rotation Toggle: False
-Random Rotation X: False
-Random Rotation Y: False
-Random Rotation Z: False
-Random Scale Toggle: False
-Random Scale Min: 0.1
-Random Scale Max: 1
-Fixed Rotation Toggle: False
-Fixed Rotation X: 0
-Fixed Rotation Y: 0
-Fixed Rotation Z: 0
-Depth: 0
-
-Game Object: Assets/Resources/Prefabs/Environment/Trees/DeadTree1.prefab
-Layer: Default
-Toggle: True
-Slider: 0.2777778
-Lock Orientation Toggle: True
-Random Rotation Toggle: False
-Random Rotation X: False
-Random Rotation Y: False
-Random Rotation Z: False
-Random Scale Toggle: False
-Random Scale Min: 0.1
-Random Scale Max: 1
-Fixed Rotation Toggle: False
-Fixed Rotation X: 0
-Fixed Rotation Y: 0
-Fixed Rotation Z: 0
-Depth: 0
-
-Game Object: Assets/Resources/Prefabs/Environment/Trees/DeadTrees.prefab
-Layer: Default
-Toggle: True
-Slider: 0.1759259
-Lock Orientation Toggle: True
+Slider: 0
+Lock Orientation Toggle: False
 Random Rotation Toggle: False
 Random Rotation X: False
 Random Rotation Y: False
