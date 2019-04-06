@@ -93,7 +93,7 @@ namespace DynamicFogAndMist {
 												Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 												Rigidbody rb = ballClone.GetComponent<Rigidbody>();
 												rb.velocity = (ray.direction * 80f) + Camera.main.transform.forward * 20f;
-												ballClone.transform.FindChild("Sounds/ShootSound").GetComponent<AudioSource>().Play();
+												ballClone.transform.Find("Sounds/ShootSound").GetComponent<AudioSource>().Play();
 												yield return new WaitForSeconds(10f);
 												Destroy(ballClone);
 								}

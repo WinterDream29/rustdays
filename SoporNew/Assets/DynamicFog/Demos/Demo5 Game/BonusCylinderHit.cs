@@ -12,7 +12,7 @@ namespace DynamicFogAndMist {
 												StartCoroutine(DestroyCylinder(ball));
 												// Play sound
 												Destroy(ball.GetComponent<Rigidbody>());
-												ball.transform.FindChild("Sounds/Hit").GetComponent<AudioSource>().Play();
+												ball.transform.Find("Sounds/Hit").GetComponent<AudioSource>().Play();
 								}
 
 								IEnumerator DestroyCylinder(GameObject ball) {
