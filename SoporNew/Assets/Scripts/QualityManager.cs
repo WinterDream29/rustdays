@@ -32,9 +32,9 @@ namespace Assets.Scripts
             switch (CurrentQuality)
             {
                 case QualityType.Low:
-                    gameManager.World.Sky.CloudQuality = TOD_CloudQualityType.Low;
-                    gameManager.World.Sky.MeshQuality = TOD_MeshQualityType.Low;
-                    gameManager.World.Sky.StarQuality = TOD_StarQualityType.Low;
+                    //gameManager.World.Sky.CloudQuality = TOD_CloudQualityType.Low;
+                    //gameManager.World.Sky.MeshQuality = TOD_MeshQualityType.Low;
+                    //gameManager.World.Sky.StarQuality = TOD_StarQualityType.Low;
                     if (rays != null)
                         rays.enabled = false;
                     if (scattering != null)
@@ -48,9 +48,9 @@ namespace Assets.Scripts
                         gameManager.World.Grass.SetActive(false);
                     break;
                 case QualityType.Medium:
-                    gameManager.World.Sky.CloudQuality = TOD_CloudQualityType.Medium;
-                    gameManager.World.Sky.MeshQuality = TOD_MeshQualityType.Low;
-                    gameManager.World.Sky.StarQuality = TOD_StarQualityType.Low;
+                    //gameManager.World.Sky.CloudQuality = TOD_CloudQualityType.Medium;
+                    //gameManager.World.Sky.MeshQuality = TOD_MeshQualityType.Low;
+                    //gameManager.World.Sky.StarQuality = TOD_StarQualityType.Low;
                     //gameManager.World.WaterController.waterQuality = WaterQuality.Medium;
                     gameManager.Terrain1.basemapDistance = 40;
                     //gameManager.Terrain1.detailObjectDensity = 0.0f;
@@ -64,9 +64,9 @@ namespace Assets.Scripts
                         scattering.enabled = false;
                     break;
                 case QualityType.Hight:
-                    gameManager.World.Sky.CloudQuality = TOD_CloudQualityType.High;
-                    gameManager.World.Sky.MeshQuality = TOD_MeshQualityType.Medium;
-                    gameManager.World.Sky.StarQuality = TOD_StarQualityType.Low;
+                    //gameManager.World.Sky.CloudQuality = TOD_CloudQualityType.High;
+                    //gameManager.World.Sky.MeshQuality = TOD_MeshQualityType.Medium;
+                    //gameManager.World.Sky.StarQuality = TOD_StarQualityType.Low;
                     //gameManager.World.WaterController.waterQuality = WaterQuality.High;
                     gameManager.Terrain1.basemapDistance = 50;
                     //gameManager.Terrain1.detailObjectDensity = 0.9f;
@@ -80,9 +80,9 @@ namespace Assets.Scripts
                         scattering.enabled = false;
                     break;
                 case QualityType.Ultra:
-                    gameManager.World.Sky.CloudQuality = TOD_CloudQualityType.High;
-                    gameManager.World.Sky.MeshQuality = TOD_MeshQualityType.Medium;
-                    gameManager.World.Sky.StarQuality = TOD_StarQualityType.Low;
+                    //gameManager.World.Sky.CloudQuality = TOD_CloudQualityType.High;
+                    //gameManager.World.Sky.MeshQuality = TOD_MeshQualityType.Medium;
+                    //gameManager.World.Sky.StarQuality = TOD_StarQualityType.Low;
                     //gameManager.World.WaterController.waterQuality = WaterQuality.High;
                     gameManager.Terrain1.basemapDistance = 50;
                     //gameManager.Terrain1.detailObjectDensity = 1.0f;
@@ -91,7 +91,7 @@ namespace Assets.Scripts
                     //gameManager.Terrain2.detailObjectDensity = 1.0f;
                     gameManager.Terrain2.detailObjectDistance = 50.0f;
                     if (rays != null)
-                        rays.enabled = true;
+                        rays.enabled = false;
                     if (scattering != null)
                         scattering.enabled = false;
                     break;
