@@ -1,184 +1,107 @@
-#if NETFX_CORE && !UNITY_EDITOR
-//using Thread = MarkerMetro.Unity.WinLegacy.Threading.Thread;
-//using ParameterizedThreadStart = MarkerMetro.Unity.WinLegacy.Threading.ParameterizedThreadStart;
+#if UNITY_WEBGL && !UNITY_EDITOR
+#define SINGLE_THREAD
 #endif
-
-using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 using System.Threading;
 
-namespace Pathfinding.Threading {
-#if FALSE
-	public class Parallel {
-		
-		Parallel Instance;
-		
-		AutoResetEvent[] jobAvailable;
-		ManualResetEvent[] threadIdle;
-		Thread[] threads;
-		
-		static System.Object sync = new System.Object ();
-		
-		int currentIndex;
-		int stopIndex;
-		
-		int step = 1;
-		
-		public delegate void ForLoopBody (int i);
-		
-		ForLoopBody loopBody;
-		
-		public static int threadsCount = System.Environment.ProcessorCount;
-		public static int iterationStepLength = 10;
-		
-		// Initialize Parallel class's instance creating required number of threads
-		// and synchronization objects
-		private void Initialize( )
-		{
-			threadsCount = System.Environment.ProcessorCount;
-			
-			//No point starting new threads for a single core computer
-			if (threadsCount <= 1) {
-				return;
-			}
-			
-			// array of events, which signal about available job
-			jobAvailable = new AutoResetEvent[threadsCount];
-			// array of events, which signal about available thread
-			threadIdle = new ManualResetEvent[threadsCount];
-			// array of threads
-			threads = new Thread[threadsCount];
-		
-			for ( int i = 0; i < threadsCount; i++ )
-			{
-				jobAvailable[i] = new AutoResetEvent( false );
-				threadIdle[i]   = new ManualResetEvent( true );
-		
-				threads[i] = new Thread( new ParameterizedThreadStart( WorkerThread ) );
-				threads[i].IsBackground = false;
-				threads[i].Start( i );
-			}
-		}
-		
-		public void Close () {
-			//Exit all threads
-			loopBody = null;
-			for ( int i = 0; i < threadsCount; i++ )
-			{
-				jobAvailable[i].Set( );
-			}
-		}
-		
-		public static void For( int start, int stop, ForLoopBody loopBody  )
-		{
-			For (start,stop,1,loopBody);
-		}
-		
-		public static void For( int start, int stop, int stepLength, ForLoopBody loopBody  )
-		{
-			For (start,stop,stepLength,loopBody,true);
-		}
-		
-		public static void For( int start, int stop, int stepLength, ForLoopBody loopBody, bool close  )
-		{
-			// get instance of parallel computation manager
-			Parallel instance = new Parallel ();
-			instance.Initialize ();
-			instance.ForLoop (start,stop,stepLength,loopBody, close);
-			
-		}
-		
-			
-		public void ForLoop ( int start, int stop, int stepLength, ForLoopBody loopBody, bool close  )
-		{
-			lock ( sync )
-			{
-				
-				//Parallel instance = new Parallel ();
-				
-				
-				stepLength = stepLength < 1 ? 1 : stepLength;
-				
-				currentIndex	= start;
-				stopIndex		= stop;
-				this.loopBody	= loopBody;
-				step			= stepLength;
-				//No point starting new threads for a single core computer, just run it on this thread
-				if (threadsCount <= 1) {
-					for (int i=start;i<stop;i+= stepLength) {
-						loopBody( i );
-					}
-					return;
-				}
-				
-				// signal about available job for all threads and mark them busy
-				for ( int i = 0; i < threadsCount; i++ )
-				{
-					threadIdle[i].Reset( );
-					jobAvailable[i].Set( );
-				}
-				
-				// wait until all threads become idle
-				for ( int i = 0; i < threadsCount; i++ )
-				{
-					threadIdle[i].WaitOne( );
-				}
-				
-				if (close) {
-					Close ();
-				}
-			}
-		}
-		
-		// Worker thread performing parallel computations in loop
-		private void WorkerThread( object index )
-		{
-			int threadIndex = (int) index;
-			int localIndex = 0;
-		
-			while ( true )
-			{
-				// wait until there is job to do
-				jobAvailable[threadIndex].WaitOne( );
-		
-				// exit on null body
-				if ( loopBody == null ) {
-					break;
-		
-				}
-				
-				while ( true )
-				{
-					// get local index incrementing global loop's current index
-					//localIndex = Interlocked.Increment( ref currentIndex );
-					
-					localIndex = Interlocked.Add (ref currentIndex, iterationStepLength*step);
-					
-					int startIndex = localIndex-iterationStepLength*step;
-					
-					bool doBreak = false;
-					
-					if (localIndex >= stopIndex) {
-						doBreak = true;
-						localIndex = stopIndex;
-					}
-					
-					for (int i=startIndex;i<localIndex;i+= step) {
-						
-						loopBody( i );
-					}
-					
-					if (doBreak) {
-						break;
-					}
-					// run loop's body
-					//loopBody( localIndex );
-				}
-		
-				// signal about thread availability
-				threadIdle[threadIndex].Set( );
-			}
-		}
-	}
+namespace Pathfinding.Util {
+	/// <summary>
+	/// Helper for parallelizing tasks.
+	/// More specifically this class is useful if the tasks need some large and slow to initialize 'scratch pad'.
+	/// Using this class you can initialize a scratch pad per thread and then use the appropriate one in the task
+	/// callback (which includes a thread index).
+	///
+	/// Any exception that is thrown in the worker threads will be propagated out to the caller of the <see cref="Run"/> method.
+	/// </summary>
+	public class ParallelWorkQueue<T> {
+		/// <summary>
+		/// Callback to run for each item in the queue.
+		/// The callback takes the item as the first parameter and the thread index as the second parameter.
+		/// </summary>
+		public System.Action<T, int> action;
+
+		/// <summary>Number of threads to use</summary>
+		public readonly int threadCount;
+
+		/// <summary>Queue of items</summary>
+		readonly Queue<T> queue;
+		readonly int initialCount;
+#if !SINGLE_THREAD
+		ManualResetEvent[] waitEvents;
+		System.Exception innerException;
 #endif
+
+		public ParallelWorkQueue (Queue<T> queue) {
+			this.queue = queue;
+			initialCount = queue.Count;
+#if SINGLE_THREAD
+			threadCount = 1;
+#else
+			threadCount = System.Math.Min(initialCount, System.Math.Max(1, AstarPath.CalculateThreadCount(ThreadCount.AutomaticHighLoad)));
+#endif
+		}
+
+		/// <summary>Execute the tasks.</summary>
+		/// <param name="progressTimeoutMillis">This iterator will yield approximately every progressTimeoutMillis milliseconds.
+		///  This can be used to e.g show a progress bar.</param>
+		public IEnumerable<int> Run (int progressTimeoutMillis) {
+			if (initialCount != queue.Count) throw new System.InvalidOperationException("Queue has been modified since the constructor");
+
+			// Return early if there are no items in the queue.
+			// This is important because WaitHandle.WaitAll with an array of length zero
+			// results in weird behaviour (Microsoft's .Net returns false, Mono returns true
+			// and the documentation says it should throw an exception).
+			if (initialCount == 0) yield break;
+
+#if SINGLE_THREAD
+			// WebGL does not support multithreading so we will do everything on the main thread instead
+			for (int i = 0; i < initialCount; i++) {
+				action(queue.Dequeue(), 0);
+				yield return i + 1;
+			}
+#else
+			// Fire up a bunch of threads to scan the graph in parallel
+			waitEvents = new ManualResetEvent[threadCount];
+			for (int i = 0; i < waitEvents.Length; i++) {
+				waitEvents[i] = new ManualResetEvent(false);
+#if NETFX_CORE
+				// Need to make a copy here, otherwise it may refer to some other index when the task actually runs.
+				int threadIndex = i;
+				System.Threading.Tasks.Task.Run(() => RunTask(threadIndex));
+#else
+				ThreadPool.QueueUserWorkItem(threadIndex => RunTask((int)threadIndex), i);
+#endif
+			}
+
+			while (!WaitHandle.WaitAll(waitEvents, progressTimeoutMillis)) {
+				int count;
+				lock (queue) count = queue.Count;
+				yield return initialCount - count;
+			}
+
+			if (innerException != null) throw innerException;
+#endif
+		}
+
+#if !SINGLE_THREAD
+		void RunTask (int threadIndex) {
+			try {
+				while (true) {
+					T tile;
+					lock (queue) {
+						if (queue.Count == 0) return;
+						tile = queue.Dequeue();
+					}
+					action(tile, threadIndex);
+				}
+			} catch (System.Exception e) {
+				innerException = e;
+				// Stop the remaining threads
+				lock (queue) queue.Clear();
+			} finally {
+				waitEvents[threadIndex].Set();
+			}
+		}
+#endif
+	}
 }
