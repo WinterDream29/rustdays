@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 fileFormatVersion: 2
 guid: f632b5b305b685e429282cf903c773e9
 timeCreated: 1484431493
@@ -6,3 +7,8 @@ NativeFormatImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+=======
+version https://git-lfs.github.com/spec/v1
+oid sha256:be28156e552f72a6c1a9f4a5d12798d4649b3b4208689dd0252e9408e24a6cb8
+size 188
+>>>>>>> master2

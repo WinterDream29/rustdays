@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 fileFormatVersion: 2
 guid: e26c2f98df17bf242a4dd350803bbce3
 timeCreated: 1481120071
@@ -7,3 +8,8 @@ ShaderImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+=======
+version https://git-lfs.github.com/spec/v1
+oid sha256:54fbfacfc27dff38169e0b4253188f1ef3f5b3a59acd30d133e577580c2103de
+size 205
+>>>>>>> master2

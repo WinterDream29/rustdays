@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 fileFormatVersion: 2
 guid: 92d823863b34e4648afb042b39991109
 MonoImporter:
@@ -8,3 +9,8 @@ MonoImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+=======
+version https://git-lfs.github.com/spec/v1
+oid sha256:1a8141c0df6046983cfe789c31bb70dc5ba7f0381deb599dabd87692b8ab04a6
+size 231
+>>>>>>> master2

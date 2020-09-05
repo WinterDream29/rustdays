@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 fileFormatVersion: 2
 guid: fef3782f01456f7468143608233dc18d
 timeCreated: 1486582053
@@ -60,3 +61,8 @@ TextureImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+=======
+version https://git-lfs.github.com/spec/v1
+oid sha256:502704cb0f5496df66b7660df1216f8c0fdc4a9877b5bc970030acba47b9ecff
+size 1391
+>>>>>>> master2

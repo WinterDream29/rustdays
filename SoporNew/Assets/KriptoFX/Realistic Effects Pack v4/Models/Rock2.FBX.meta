@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 fileFormatVersion: 2
 guid: 4be8c09c43600924bab94d7edf7f8159
 ModelImporter:
@@ -369,3 +370,8 @@ ModelImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+=======
+version https://git-lfs.github.com/spec/v1
+oid sha256:74548af00515b9f2737e074bd6dab37b11213abd1d0f7c6e20784901a582b030
+size 10260
+>>>>>>> master2

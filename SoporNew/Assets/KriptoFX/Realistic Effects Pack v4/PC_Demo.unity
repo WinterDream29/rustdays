@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
 --- !u!29 &1
@@ -65069,3 +65070,8 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1243128298}
   m_RootOrder: 4
+=======
+version https://git-lfs.github.com/spec/v1
+oid sha256:50008e229af323b637caee4b5a9bfc2ab06413ad027afb6963876de046ad228b
+size 1999829
+>>>>>>> master2

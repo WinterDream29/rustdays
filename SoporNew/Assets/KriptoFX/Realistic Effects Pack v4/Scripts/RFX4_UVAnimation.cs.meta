@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 fileFormatVersion: 2
 guid: 558f2e70b8b6af44383fe1fc44678b66
 timeCreated: 1472041961
@@ -10,3 +11,8 @@ MonoImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+=======
+version https://git-lfs.github.com/spec/v1
+oid sha256:ff7da884adc986cc939f1a7367074aabb35b8d9b99a7c0543b42773dea017ddb
+size 275
+>>>>>>> master2
